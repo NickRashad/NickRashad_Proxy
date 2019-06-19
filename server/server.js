@@ -6,7 +6,7 @@ const cors = require('cors');
 
 app.use(cors());
 app.use(express.static('public'));
-// app.use('/bizs/:bId', express.static(`${__dirname}/../public`));
+app.use('/bizs/:bId', express.static(`${__dirname}/../public`));
 
 app.use('/biz', proxy({ target: 'http://localhost:3001', changeOrigin: true }));
 app.use('/biz_photos', proxy({ target: 'http://localhost:3001', changeOrigin: true }));
